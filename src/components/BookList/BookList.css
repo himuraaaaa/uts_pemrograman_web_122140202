@@ -1,93 +1,82 @@
-.booklist, .book-details{
-    padding: 3rem 0;
-    background-color: #f8f9fa;
-}
-.booklist-content{
-    gap: 3rem;
-}
-.book-item{
-    padding: 3rem 2rem;
-    border-radius: 4px;
-    background-color: var(--white-color);
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px 0px;
-    transition: var(--transition);
-}
-.book-item:hover{
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-}
-.book-item-img img{
-    max-width: 180px;
-    margin-right: auto;
-    margin-left: auto;
-}
-.book-item-info{
-    margin-top: 2rem;
-}
-.book-item-info-item.title{
-    line-height: 1.4;
-    margin-bottom: 0.8rem;
-}
-.book-item-info-item.author{
-    line-height: 1.4;
-    margin-bottom: 4px;
-}
-.book-item-info-item:not(.book-item-info-item.title) span:last-child{
-    opacity: 0.8;
-}
-.book-item-info-item.publish-year{
-    opacity: 0.6;
-    font-style: italic;
-    font-size: 14px;
-}
-
-@media screen and (min-width: 600px){
-    .booklist-content{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (min-width: 992px){
-    .booklist-content{
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .book-item-img img{
-        max-width: 150px;
-    }
-}
-
-@media screen and (min-width: 992px){
-    .booklist-content{
-        grid-template-columns: repeat(4, 1fr);
-    }
-    .book-item-img img{
-        max-width: 120px;
-    }
-}
-
 /* General layout for the booklist section */
 .booklist-content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  /* Styling for individual book cards */
-  .book-card {
-    width: 18rem;
-    margin: 10px;
-  }
-  
-  /* Fallback styling for missing book covers */
-  .fallback-img {
-    width: 100%;
-    height: 180px;
+    flex-direction: column;
+    gap: 2rem; /* Spacing between items */
+}
+
+.book-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem; /* Space between image and text */
+    background-color: var(--white-color);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px;
+    transition: var(--transition);
+}
+
+.book-item:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+}
+
+.book-item-left {
+    flex: 0 0 150px; /* Fixed width for the image */
+}
+
+.book-item-img, .fallback-img {
+    width: 150px;
+    height: 220px; /* Set a consistent size for images */
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+}
+
+.fallback-img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0;
-    color: #333;
-    font-size: 14px;
+}
+
+.book-item-right {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Space between text items */
+}
+
+.book-title {
+    font-size: 1.8rem;
     font-weight: bold;
-    text-align: center;
-  }
+    margin-bottom: 0.5rem;
+}
+
+.book-author, .book-first-published, .book-total-editions {
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
+}
+
+.btn {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem 1.2rem; /* Increased padding for larger size */
+    font-size: 1.2rem; /* Increased font size */
+    cursor: pointer;
+    margin-top: 0.8rem; /* Slightly more spacing above the button */
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Aligns button to the left */
+}
+
+.btn:hover {
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+
+
   
