@@ -10,10 +10,10 @@ const BookList = () => {
   const booksWithCovers = books.map((singleBook) => {
     return {
       ...singleBook,
-      id: singleBook.id.replace("/works/", ""), // Removing /works/ to get only the ID
-      cover_img: singleBook.cover_id ? `https://covers.openlibrary.org/b/id/${singleBook.cover_id}-L.jpg` : null, // Use null for missing covers
-      total_editions: singleBook.edition_count || "N/A", // Total Edition Count
-      first_publish_year: singleBook.first_publish_year || "Unknown" // First Publish Year
+      id: singleBook.id.replace("/works/", ""), 
+      cover_img: singleBook.cover_id ? `https://covers.openlibrary.org/b/id/${singleBook.cover_id}-L.jpg` : null, 
+      total_editions: singleBook.edition_count || "N/A", 
+      first_publish_year: singleBook.first_publish_year || "Unknown" 
     };
   });
 
@@ -51,7 +51,6 @@ const BookList = () => {
                 <p className="book-total-editions">
                   <strong>Total Editions:</strong> {book.total_editions}
                 </p>
-                {/* Link Button to BookDetail Page */}
                 <Link to={`/book/${book.id}`} className="btn btn-primary">
                   View Details
                 </Link>
