@@ -5,7 +5,7 @@ import "./BookDetails.css";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 
-const URL = "https://openlibrary.org/works/";
+const URLDetail = "https://openlibrary.org/works/";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -17,7 +17,7 @@ const BookDetails = () => {
     setLoading(true);
     async function getBookDetails() {
       try {
-        const response = await fetch(`${URL}${id}.json`);
+        const response = await fetch(`${URLDetail}${id}.json`);
         const data = await response.json();
         console.log(data);
 
