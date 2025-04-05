@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className='container navbar-content flex'>
         <div className='brand-and-toggler flex flex-sb'>
           <Link to = "/" className='navbar-brand flex'>
-            <span className='text-uppercase text-white fw-7 fs-24 ls-1'>bookhub</span>
+            <span className='text-uppercase text-white fw-7 fs-24 ls-1'>bookfinder</span>
           </Link>
           <button type = "button" className='navbar-toggler-btn' onClick={handleNavbar}>
             <HiOutlineMenuAlt3 size = {35} style = {{
